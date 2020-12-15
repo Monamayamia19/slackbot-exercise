@@ -1,5 +1,5 @@
 // Set this assignment to false if you do not want to use it.
-module.exports.ACTIVATE_BOT = true;
+module.exports.ACTIVATE_BOT = false;
 
 module.exports.botScripts = [
   {
@@ -8,9 +8,9 @@ module.exports.botScripts = [
     handler: function () {
       return 'Good Evening to You!';
     },
-    isReply: false,
+    isReply: true,
     isCaseSensitive: false,
-    isListening: false,
+    isListening: true,
   },
   {
     label: 'An Example Script with Variables',
@@ -19,10 +19,11 @@ module.exports.botScripts = [
       return 'Hello ' + params.name + '!';
     },
     isListening: true,
+    isCaseSensitive: false,
   },
   {
     label: 'An Example Script with Typed Variables',
-    prompt: 'Give twice $#{amount as number} to #{name}',
+    prompt: 'Give twice $#{amount} to #{name}',
     handler: function (params) {
       const doubledAmount = 2 * params.amount;
       return (
@@ -33,5 +34,8 @@ module.exports.botScripts = [
         '!'
       );
     },
+    isCaseSensitive: false,
+    isListening: true,
+  
   },
 ];
